@@ -17,6 +17,9 @@ import Expenses from "./pages/Expenses";
 import Reports from "./pages/Reports";
 import NotFound from "./pages/NotFound";
 
+import { Bell, User, PanelLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -28,20 +31,61 @@ const App = () => (
         <SidebarProvider>
           <div className="flex min-h-screen w-full">
             <AppSidebar />
-            <main className="flex-1 p-6 bg-background">
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/sales" element={<Sales />} />
-                <Route path="/purchases" element={<Purchases />} />
-                <Route path="/customers" element={<Customers />} />
-                <Route path="/suppliers" element={<Suppliers />} />
-                <Route path="/repairs" element={<Repairs />} />
-                <Route path="/cash-flow" element={<CashFlow />} />
-                <Route path="/expenses" element={<Expenses />} />
-                <Route path="/reports" element={<Reports />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+
+            {/* MAIN CONTENT AREA */}
+            <main className="flex-1 bg-background">
+
+              {/* ⭐ GLOBAL HEADER (appears on every page) */}
+              <header className="h-16 border-b border-border bg-card flex items-center justify-between px-6">
+
+                {/* LEFT SIDE: sidebar toggle + title */}
+                <div className="flex items-center gap-4">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    data-sidebar="trigger"
+                    className="h-7 w-7"
+                  >
+                    <PanelLeft className="h-4 w-4" />
+                    <span className="sr-only">Toggle Sidebar</span>
+                  </Button>
+
+                  <h1 className="text-xl font-semibold text-foreground">
+                    SHoSHoP
+                  </h1>
+                </div>
+
+                {/* RIGHT SIDE: notifications + user */}
+                <div className="flex items-center gap-3">
+                  {/* NOTIFICATION BUTTON */}
+                  <Button variant="ghost" size="icon" className="relative h-10 w-10">
+                    <Bell className="h-5 w-5" />
+                    <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-destructive"></span>
+                  </Button>
+
+                  {/* USER BUTTON */}
+                  <Button variant="ghost" size="icon" className="h-10 w-10">
+                    <User className="h-5 w-5" />
+                  </Button>
+                </div>
+              </header>
+
+              {/* ROUTES BELOW HEADER */}
+              <div className="p-6">
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/products" element={<Products />} />
+                  <Route path="/sales" element={<Sales />} />
+                  <Route path="/purchases" element={<Purchases />} />
+                  <Route path="/customers" element={<Customers />} />
+                  <Route path="/suppliers" element={<Suppliers />} />
+                  <Route path="/repairs" element={<Repairs />} />
+                  <Route path="/cash-flow" element={<CashFlow />} />
+                  <Route path="/expenses" element={<Expenses />} />
+                  <Route path="/reports" element={<Reports />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </div>
             </main>
           </div>
         </SidebarProvider>
