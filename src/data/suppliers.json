@@ -1,0 +1,32 @@
+[
+  {
+    "id": "SUP-001",
+    "name": "TechSupply Co.",
+    "contact": "Yohannes Bekele",
+    "phone": "+251911111111",
+    "email": "info@techsupply.com",
+    "totalPurchases": 1250000,
+    "outstandingPayable": 0,
+    "lastPurchase": "2024-01-15"
+  },
+  {
+    "id": "SUP-002",
+    "name": "Global Electronics",
+    "contact": "Sarah Johnson",
+    "phone": "+251922222222",
+    "email": "sales@globalelec.com",
+    "totalPurchases": 890000,
+    "outstandingPayable": 150000,
+    "lastPurchase": "2024-01-18"
+  },
+  {
+    "id": "SUP-003",
+    "name": "Premium Imports",
+    "contact": "Ahmed Mohammed",
+    "phone": "+251933333333",
+    "email": "contact@premiumimports.com",
+    "totalPurchases": 2450000,
+    "outstandingPayable": 0,
+    "lastPurchase": "2024-01-20"
+  }
+]

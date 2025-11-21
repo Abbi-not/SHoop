@@ -1,0 +1,58 @@
+[
+  {
+    "id": "PO-001",
+    "date": "2024-01-15",
+    "supplier": "TechSupply Co.",
+    "items": [
+      {
+        "productName": "iPhone 15 Pro",
+        "quantity": 10,
+        "costPrice": 45000
+      }
+    ],
+    "subtotal": 450000,
+    "discount": 5000,
+    "total": 445000,
+    "status": "Received",
+    "paymentStatus": "Paid"
+  },
+  {
+    "id": "PO-002",
+    "date": "2024-01-18",
+    "supplier": "Global Electronics",
+    "items": [
+      {
+        "productName": "Samsung Galaxy S24",
+        "quantity": 8,
+        "costPrice": 38000
+      },
+      {
+        "productName": "AirPods Pro",
+        "quantity": 15,
+        "costPrice": 12000
+      }
+    ],
+    "subtotal": 484000,
+    "discount": 0,
+    "total": 484000,
+    "status": "Pending",
+    "paymentStatus": "Partial"
+  },
+  {
+    "id": "PO-003",
+    "date": "2024-01-20",
+    "supplier": "Premium Imports",
+    "items": [
+      {
+        "productName": "MacBook Pro 14",
+        "quantity": 5,
+        "costPrice": 95000
+      }
+    ],
+    "subtotal": 475000,
+    "discount": 10000,
+    "total": 465000,
+    "status": "Received",
+    "paymentStatus": "Paid"
+  }
+]

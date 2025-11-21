@@ -1,0 +1,42 @@
+[
+  {
+    "id": "CUST-001",
+    "name": "Abebe Kebede",
+    "phone": "+251911234567",
+    "email": "abebe.k@email.com",
+    "totalPurchases": 125000,
+    "outstandingBalance": 0,
+    "loyaltyPoints": 125,
+    "lastPurchase": "2024-01-20"
+  },
+  {
+    "id": "CUST-002",
+    "name": "Tigist Amare",
+    "phone": "+251922345678",
+    "email": "tigist.a@email.com",
+    "totalPurchases": 89000,
+    "outstandingBalance": 15000,
+    "loyaltyPoints": 89,
+    "lastPurchase": "2024-01-19"
+  },
+  {
+    "id": "CUST-003",
+    "name": "Solomon Tesfaye",
+    "phone": "+251933456789",
+    "email": "solomon.t@email.com",
+    "totalPurchases": 245000,
+    "outstandingBalance": 0,
+    "loyaltyPoints": 245,
+    "lastPurchase": "2024-01-18"
+  },
+  {
+    "id": "CUST-004",
+    "name": "Meseret Haile",
+    "phone": "+251944567890",
+    "email": "meseret.h@email.com",
+    "totalPurchases": 67000,
+    "outstandingBalance": 12000,
+    "loyaltyPoints": 67,
+    "lastPurchase": "2024-01-17"
+  }
+]

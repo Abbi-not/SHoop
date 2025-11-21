@@ -1,0 +1,41 @@
+[
+  {
+    "id": "REP-001",
+    "date": "2024-01-18",
+    "customer": "Abebe Kebede",
+    "device": "iPhone 13 Pro",
+    "issue": "Cracked screen",
+    "status": "Completed",
+    "technician": "Dawit Tesfaye",
+    "cost": 8500,
+    "parts": ["Screen Assembly"],
+    "receivedDate": "2024-01-18",
+    "completedDate": "2024-01-19"
+  },
+  {
+    "id": "REP-002",
+    "date": "2024-01-19",
+    "customer": "Tigist Amare",
+    "device": "Samsung Galaxy S22",
+    "issue": "Battery replacement",
+    "status": "In Progress",
+    "technician": "Dawit Tesfaye",
+    "cost": 4500,
+    "parts": ["Battery"],
+    "receivedDate": "2024-01-19",
+    "completedDate": null
+  },
+  {
+    "id": "REP-003",
+    "date": "2024-01-20",
+    "customer": "Solomon Tesfaye",
+    "device": "MacBook Pro 13",
+    "issue": "Keyboard malfunction",
+    "status": "Received",
+    "technician": "Mulugeta Assefa",
+    "cost": 12000,
+    "parts": ["Keyboard Assembly"],
+    "receivedDate": "2024-01-20",
+    "completedDate": null
+  }
+]

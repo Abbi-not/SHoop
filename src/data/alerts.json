@@ -1,0 +1,26 @@
+[
+  {
+    "id": "alert-001",
+    "type": "low-stock",
+    "severity": "warning",
+    "message": "Dell XPS 15 stock is low (2 units remaining)",
+    "productId": "prod-005",
+    "date": "2025-01-20"
+  },
+  {
+    "id": "alert-002",
+    "type": "low-stock",
+    "severity": "critical",
+    "message": "iPhone 14 critically low stock (1 unit remaining)",
+    "productId": "prod-006",
+    "date": "2025-01-20"
+  },
+  {
+    "id": "alert-003",
+    "type": "repair-delayed",
+    "severity": "warning",
+    "message": "Repair job #RP-045 is delayed by 2 days",
+    "repairId": "rp-045",
+    "date": "2025-01-19"
+  }
+]

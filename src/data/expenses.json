@@ -1,0 +1,38 @@
+[
+  {
+    "id": "EXP-001",
+    "date": "2024-01-20",
+    "category": "Rent",
+    "description": "Monthly shop rent",
+    "amount": 25000,
+    "paymentMethod": "Bank Transfer",
+    "approvedBy": "Manager"
+  },
+  {
+    "id": "EXP-002",
+    "date": "2024-01-18",
+    "category": "Utilities",
+    "description": "Electricity bill",
+    "amount": 3500,
+    "paymentMethod": "Cash",
+    "approvedBy": "Manager"
+  },
+  {
+    "id": "EXP-003",
+    "date": "2024-01-15",
+    "category": "Salary",
+    "description": "Staff salaries",
+    "amount": 45000,
+    "paymentMethod": "Bank Transfer",
+    "approvedBy": "Admin"
+  },
+  {
+    "id": "EXP-004",
+    "date": "2024-01-12",
+    "category": "Maintenance",
+    "description": "AC repair",
+    "amount": 8000,
+    "paymentMethod": "Cash",
+    "approvedBy": "Manager"
+  }
+]
