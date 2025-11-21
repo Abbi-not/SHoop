@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import Index from "./pages/Index";
@@ -15,6 +15,8 @@ import Repairs from "./pages/Repairs";
 import CashFlow from "./pages/CashFlow";
 import Expenses from "./pages/Expenses";
 import Reports from "./pages/Reports";
+import Notifications from "./pages/Notifications";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 import { Bell, User, PanelLeft } from "lucide-react";
@@ -58,15 +60,22 @@ const App = () => (
                 {/* RIGHT SIDE: notifications + user */}
                 <div className="flex items-center gap-3">
                   {/* NOTIFICATION BUTTON */}
+
+                  <Link to="/notifications">
                   <Button variant="ghost" size="icon" className="relative h-10 w-10">
                     <Bell className="h-5 w-5" />
                     <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-destructive"></span>
                   </Button>
 
+                  </Link>
+                  
                   {/* USER BUTTON */}
-                  <Button variant="ghost" size="icon" className="h-10 w-10">
+                  <Link to="/profile">
+                   <Button variant="ghost" size="icon" className="h-10 w-10">
                     <User className="h-5 w-5" />
                   </Button>
+                  </Link>
+                 
                 </div>
               </header>
 
@@ -83,6 +92,8 @@ const App = () => (
                   <Route path="/cash-flow" element={<CashFlow />} />
                   <Route path="/expenses" element={<Expenses />} />
                   <Route path="/reports" element={<Reports />} />
+                  <Route path="/notifications" element={<Notifications />} />
+                  <Route path="/profile" element={<Profile />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>
