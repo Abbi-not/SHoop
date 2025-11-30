@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Search, Calendar } from "lucide-react";
+import { useState, useRef } from "react";
+import { Search, Calendar, Printer } from "lucide-react";
+import { PrintableReceipt } from "@/components/PrintableReceipt";
 import { NewSaleDialog } from "@/components/NewSaleDialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -24,6 +25,15 @@ import salesData from "@/data/sales.json";
 const Sales = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [paymentFilter, setPaymentFilter] = useState("all");
+  const [selectedSale, setSelectedSale] = useState<typeof salesData[0] | null>(null);
+  const printRef = useRef<HTMLDivElement>(null);
+
+  const handlePrint = (sale: typeof salesData[0]) => {
+    setSelectedSale(sale);
+    setTimeout(() => {
+      window.print();
+    }, 100);
+  };
 
   const filteredSales = salesData.filter((sale) => {
     const matchesSearch = sale.customer.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -83,6 +93,7 @@ const Sales = () => {
               <TableHead>Total</TableHead>
               <TableHead>Payment</TableHead>
               <TableHead>Status</TableHead>
+              <TableHead>Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -118,11 +129,25 @@ const Sales = () => {
                 <TableCell>
                   <Badge variant="default">{sale.status}</Badge>
                 </TableCell>
+                <TableCell>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => handlePrint(sale)}
+                    title="Print Receipt"
+                  >
+                    <Printer className="h-4 w-4" />
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </div>
+
+      {selectedSale && (
+        <PrintableReceipt ref={printRef} sale={selectedSale} />
+      )}
 
       <div className="flex items-center justify-between text-sm text-muted-foreground">
         <p>Showing {filteredSales.length} of {salesData.length} sales</p>
