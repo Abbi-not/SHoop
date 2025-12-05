@@ -1,55 +1,50 @@
-import { Bell, PanelLeft, User } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Bell, User, PanelLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { useSidebar } from "@/components/ui/sidebar";
 
 export function AppHeader() {
+  const { toggleSidebar } = useSidebar();
+
   return (
     <header className="h-16 border-b border-border bg-card flex items-center justify-between px-6">
-      {/* LEFT SECTION */}
+      {/* LEFT SIDE: sidebar toggle + title */}
       <div className="flex items-center gap-4">
-        {/* Sidebar Toggle */}
-        <button
-          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors
-          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
-          disabled:pointer-events-none disabled:opacity-50
-          [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
-          hover:bg-accent hover:text-accent-foreground
-          h-7 w-7"
-          data-sidebar="trigger"
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={toggleSidebar}
+          className="h-7 w-7"
         >
-          <PanelLeft className="h-5 w-5" />
+          <PanelLeft className="h-4 w-4" />
           <span className="sr-only">Toggle Sidebar</span>
-        </button>
+        </Button>
 
-        {/* TITLE */}
-        <h1 className="text-xl font-semibold text-foreground">SHoSHoP</h1>
+        <h1 className="text-xl font-semibold text-foreground">
+          SHoSHoP
+        </h1>
       </div>
 
-      {/* RIGHT SECTION */}
+      {/* RIGHT SIDE: theme toggle + notifications + user */}
       <div className="flex items-center gap-3">
-        {/* Notification Bell */}
-        <button
-          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors
-          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
-          disabled:pointer-events-none disabled:opacity-50
-          [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
-          hover:bg-accent hover:text-accent-foreground
-          h-10 w-10 relative"
-        >
-          <Bell className="h-5 w-5" />
-          {/* Notification Badge */}
-          <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-destructive"></span>
-        </button>
+        {/* THEME TOGGLE */}
+        <ThemeToggle />
 
-        {/* User Icon */}
-        <button
-          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors
-          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
-          disabled:pointer-events-none disabled:opacity-50
-          [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
-          hover:bg-accent hover:text-accent-foreground
-          h-10 w-10"
-        >
-          <User className="h-5 w-5" />
-        </button>
+        {/* NOTIFICATION BUTTON */}
+        <Link to="/notifications">
+          <Button variant="ghost" size="icon" className="relative h-10 w-10">
+            <Bell className="h-5 w-5" />
+            <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-destructive"></span>
+          </Button>
+        </Link>
+        
+        {/* USER BUTTON */}
+        <Link to="/profile">
+          <Button variant="ghost" size="icon" className="h-10 w-10">
+            <User className="h-5 w-5" />
+          </Button>
+        </Link>
       </div>
     </header>
   );
